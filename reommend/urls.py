@@ -20,8 +20,9 @@ from home.views import *
 
 urlpatterns = [
     path('', index),
+    path('product_detail/<id>/', product_detail),
+    path('product/<id>/', ProductDetailAPI.as_view()),
     path('products/', ProductAPI.as_view()),
     path('activity/', LogUserActivity.as_view()),
-
     path('admin/', admin.site.urls),
 ]

@@ -44,16 +44,18 @@
                 const similarProducts = data.similar_products;
 
                 // Function to create product cards
+                                   // <p class="card-text" style="font-size:10px">${product.description}</p>
                 function createProductCard(product) {
                     return `
                         <div class="col-md-3">
-                            <div class="card product-card" onclick="handleProductClick(${product.id})">
+                            <a href="/product_detail/${product.id}" target="_blank">
+                            <div class="card product-card" onclick="handleProductClick('${product.id}')">
                                 <img src="${product.product_image}" style="height:100px !important" class="card-img-top product-image" alt="${product.name}">
                                 <div class="card-body">
-                                    <h5 class="card-title">${product.name}</h5>
-                                    <p class="card-text" style="font-size:10px">${product.description}</p>
+                                    <p class="card-title">${product.name}</p>
                                 </div>
                             </div>
+                            </a>
                         </div>
                     `;
                 }
